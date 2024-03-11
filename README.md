@@ -152,3 +152,4 @@ As imagens documentam a criação e uso de uma função customizada no Cypress p
 
 - Documentação oficial do Cypress: [docs.cypress.io](https://docs.cypress.io/)
 - Por que usar o Cypress: [Why Cypress](https://docs.cypress.io/guides/overview/why-cypress)
+- Angular Workshop: [Github](https://github.com/9elements/angular-workshop)
