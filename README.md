@@ -117,7 +117,38 @@ Para estruturar testes de forma eficiente no Cypress, é ideal seguir as seguint
 - Dividir os testes em cenários pequenos e específicos.
 - Reutilizar código comum usando funções e comandos personalizados.
 
-## 8. Referências
+## 8. Aplicando os conceitos aprendidos na instrução 
+
+As fotos e a documentação abaixo se referem à aplicação prática do Cypress conforme a instruções fornecida pelo Hernano. Serão comentados brevemente os testes e os processos de execução desses testes, tanto no terminal quanto no navegador Chrome.
+
+![commands_support.png](./assets/commands_support.png)
+
+- Esta imagem mostra a definição de uma função customizada para o Cypress, chamada byTestId.
+- A função byTestId é uma abstração que permite selecionar elementos DOM pelo atributo data-testid, facilitando a identificação de elementos na realização de testes end-to-end.
+- A função é definida dentro do namespace Cypress e é adicionada aos comandos do Cypress usando Cypress.Commands.add.
+- O código também define a interface para a função, especificando que ela aceita um id (string) e um objeto options, e retorna um Cypress.Chainable<JQuery<E>>, o que permite a encadeação de comandos do Cypress.
+
+![tests_spec.png](./assets/tests_spec.png)
+
+- Esta imagem mostra o arquivo de especificação de testes do Cypress, spec.cy.ts.
+- O arquivo contém uma suite de testes chamada 'Counter (with helpers)' e define vários testes (it blocks) que verificam o título da página, incrementam e decrementam um contador, e resetam o contador para um valor específico.
+- Os testes utilizam a função byTestId que foi definida anteriormente para selecionar elementos específicos pelo seu data-testid e realizar ações como cliques e verificações de texto.
+
+![tests_terminal.png](./assets/tests_terminal.png)
+
+- Esta é uma captura de tela do terminal, mostrando os resultados da execução do arquivo spec.cy.ts.
+- Os resultados indicam que todos os quatro testes definidos passaram com sucesso. Não há falhas, pendências ou testes pulados.
+- O Cypress também fornece informações sobre a execução dos testes, como duração (1 segundo) e confirmação de que o vídeo da sessão de teste foi gravado (Video: true).
+
+![tests_navegador.png](./assets/tests_navegador.png)
+
+- Esta captura de tela mostra o navegador Chrome sendo controlado pelo software de teste automatizado Cypress durante a execução de testes.
+- A interface do Cypress exibe a lista de testes especificados no arquivo spec.cy.ts, e todos eles estão marcados como passados (com uma marca de verificação verde).
+- O navegador mostra a aplicação Angular que esta sendo testada.
+
+As imagens documentam a criação e uso de uma função customizada no Cypress para selecionar elementos por ID de teste, a execução bem-sucedida de testes em uma interface de usuário de uma aplicação Angular, e a verificação dos resultados dos testes no Cypress, tanto na interface web quanto no terminal.
+
+## 9. Referências
 
 - Documentação oficial do Cypress: [docs.cypress.io](https://docs.cypress.io/)
 - Por que usar o Cypress: [Why Cypress](https://docs.cypress.io/guides/overview/why-cypress)
